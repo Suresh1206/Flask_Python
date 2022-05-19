@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Page</title>
+</head>
+<body>
+    <center>
+        <h3>Deatils Of Students</h3>
+    
+      <table border="5" width="20%">  
+          
+            <tr>  
+               <th>ID</th>  
+               <th>NAME</th>  
+               <th>BRANCH</th>  
+            </tr>  
+            {% for details in all_detail %}  
+            <tr style="text-align: center;">  
+                <td>{{ details.id }}</td>  
+                <td>{{ details.name }}</td>  
+                <td>{{ details.branch }}</td>  
+                
+            </tr>  
+            {% endfor %}  
+           
+      </table> <br>
+    <h2>Update Student Record</h2>
+    <form action="/updsuc/uid>" method="POST">
+        Enter Id : <input type="text" name = "uid"><br><br>
+        Enter Name : <input type="text" name = "uname"><br><br>
+        Enter Branch : <input type="text" name = "ubra"><br><br>
+        <input type="submit" value="update"><br><br>
+
+    </form>
+    {% with messages = get_flashed_messages() %}  
+    {% if messages %}  
+               {% for message in messages %}  
+                    <h2 style="color:darkgoldenrod"<h2>{{ message }}</h2> 
+               {% endfor %}  
+         {% endif %}  
+      {% endwith %} 
+    <a href="/delete">Delete Student</a><br><br>
+    <a href="/">Add Student</a><br>
+</center>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+</head>
+<body>
+<center>
+    <h2>Details Of All Students</h2>
+    
+      <table border="5" width="20%">  
+          
+            <tr>  
+               <th>ID</th>  
+               <th>NAME</th>  
+               <th>BRANCH</th>
+            </tr>  
+            
+            {% for details in all_detail %}  
+            <tr style = "text-align: center;">
+                 
+                <td>{{ details.id }}</td>  
+                <td>{{ details.name }}</td>  
+                <td>{{ details.branch }}</td>  
+                
+            </tr>  
+            {% endfor %}  
+           
+      </table> 
+      <br>
+      <a href="/">Add Student</a><br><br>
+      <a href = "/delete">Delete Student</a><br><br>
+      <a href="/update">Update Student</a>
+    </center>
+</body>
+</html>
